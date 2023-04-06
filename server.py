@@ -2,24 +2,17 @@ from flask import Flask  # Import Flask to allow us to create our app
 app = Flask(__name__)    # Create a new instance of the Flask class called "app"
 
 @app.route('/dojo')          # The "@" decorator associates this route with the function immediately following
-def david():
+def dojo():
     return 'Dojo!'  # Return the string 'Hello World!' as a response
 
 @app.route('/')          # The "@" decorator associates this route with the function immediately following
 def hello_world():
-    return 'Hello World!'
+    return 'Sorry! No response. Try again.!'
 
-@app.route('/say/flask')          # The "@" decorator associates this route with the function immediately following
-def flask():
-    return 'Hi Flask!'
+@app.route('/hello/<name>')          # The "@" decorator associates this route with the function immediately following
+def helloName(name):
+    return f"Hi {name}!"
 
-@app.route('/say/michael')          # The "@" decorator associates this route with the function immediately following
-def michael():
-    return 'Hi Michael!'
- 
-@app.route('/say/john')          # The "@" decorator associates this route with the function immediately following
-def john():
-    return 'Hi John!'
 
 @app.route('/repeat/35/hello/')          # The "@" decorator associates this route with the function immediately following
 def repeatHello():
